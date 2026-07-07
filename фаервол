@@ -1,0 +1,5 @@
+sudo ufw enable - создать фаервол
+sudo ufw status verbose - посмотреть правила
+sudo ufw allow 80/tcp - разрешить вход по http (если есть сайт
+ sudo ufw allow 443/tcp - разрешить вход по https
+ sudo ufw allow 22/tcp - рзарешить вход к ssh серверу
