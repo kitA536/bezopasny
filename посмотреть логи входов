@@ -1,0 +1,3 @@
+sudo grep "sshd" /var/log/auth.log
+ sudo grep "Accepted" /var/log/auth.log
+ sudo grep "Failed password" /var/log/auth.log
