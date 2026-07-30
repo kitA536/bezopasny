@@ -1,0 +1,7 @@
+sudo fail2ban-client status sshd-2222- проверить кого забанили
+> ~/.ssh/authorized_keys- удалить ключ из кода сервера
+sudo fail2ban-client set sshd unbanip - разбанить 
+sudo grep "Ban" /var/log/auth.log - найти запись о бане (вместо бан можно писать другие команды)
+sudo systemctl restart fail2ban - перезапустить 
+sudo nano /etc/fail2ban/jail.local - создать конфиг (настроить правила бана)
+sudo iptables -L - посмотреть правило бана
