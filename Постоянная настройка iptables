@@ -1,0 +1,12 @@
+ВАЖНО! iptables НЕ СОХРАНЯЕТ ПРАВИЛА БЕЗ ЗАМОРОЗКИ
+ОСНОВНЫЕ ПРАВИЛА:
+    INPUT DROP - по умолчанию все что происходит на сервере запрещено (кроме раазрешенного)
+    FORWARD ACCEPT - пересылка пакетов разрешена
+    OUTPUT ACCEPT - Исходящие соединения разрешены (сервер может выходить в интернет)
+           sudo iptables -P INPUT DROP - политика по умолчанию - запрет: Все запрещено что не разрешено явно
+           sudo iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT - разрешить уже установленные соединения.
+           sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT - разрешить ссг
+           sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT - разрешить http для веб сервера (сайта)
+           sudo iptables -A INPUT -p tcp --dport 443 -j ACCEPT - разрешить https для защищенных соединений
+           nmap localhost - проверить какие порты видно снаружи
+           sudo apt install iptables-persistent -y - установить заморозку правил.
