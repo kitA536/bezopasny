@@ -1,4 +1,4 @@
 sudo apt install postgresql postgresql-contrib -y - установить самую мощную бесплатную бд
-sudo -u postgres psql - войти в консоль бд
+sudo -u postgres psql -d testbdb - войти в консоль бд
 \list - посмотреть все базы 
 \q - выйти из консоли
